@@ -6,6 +6,7 @@ resource "google_service_account" "default" {
   project      = "${length(var.project) > 0 ? var.project : data.google_client_config.default.project}"
 }
 
+
 data "google_iam_policy" "default" {
   binding {
     role = "${var.role}"
