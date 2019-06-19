@@ -6,7 +6,8 @@ resource "google_service_account" "default" {
   project      = "${length(var.project) > 0 ? var.project : data.google_client_config.default.project}"
 }
 
-
+// the variable policy_data disabled this data
+/*
 data "google_iam_policy" "default" {
   binding {
     role = "${var.role}"
@@ -16,8 +17,8 @@ data "google_iam_policy" "default" {
     ]
   }
 }
-
+*/
 resource "google_project_iam_policy" "default" {
   project     = "${length(var.project) > 0 ? var.project : data.google_client_config.default.project}"
-  policy_data = "${data.google_iam_policy.default.policy_data}"
+  policy_data = "${var.policy_data}"
 }
