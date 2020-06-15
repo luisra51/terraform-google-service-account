@@ -16,8 +16,7 @@ variable "role" {
   description = "The role/permission that will be granted to the members."
 }
 
-
-
 variable "policy_data" {
   description = "All the json of policy"
 }
+
